@@ -1,0 +1,14 @@
+POST http://localhost:8080/task
+Content-Type: application/json
+
+{
+    "user_id": "00402aa5-820c-4f83-b2b7-55dcf3e6defa", 
+    
+    "task_type": "NotStarted",
+    "source_file":"test.txt"
+}
+
+
+###
+GET http://localhost:8080/task/00402aa5-820c-4f83-b2b7-55dcf3e6defa_123
+
