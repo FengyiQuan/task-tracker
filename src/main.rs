@@ -6,6 +6,7 @@ use api::task::{ get_task, submit_task, start_task, complete_task, pause_task, f
 use repository::ddb::DDBRepository;
 use actix_web::{ get, HttpServer, App, web::Data, middleware::Logger, Responder, HttpResponse };
 
+
 //create a function that returns a 200 status code
 #[get("/")]
 async fn home() -> impl Responder {
@@ -32,7 +33,8 @@ async fn main() -> std::io::Result<()> {
     std::env::set_var("RUST_BACKTRACE", "1");
     env_logger::init();
 
-    let config = aws_config::load_from_env().await;
+    println!("Running the service");
+    let config = aws_config::from_env().region("us-east-1").load().await;
     HttpServer::new(move || {
         let ddb_repo: DDBRepository = DDBRepository::init(String::from("task"), config.clone());
         let ddb_data = Data::new(ddb_repo);
@@ -50,6 +52,9 @@ async fn main() -> std::io::Result<()> {
             .service(health)
             .service(version)
     })
-        .bind(("127.0.0.1", 8080))?
+    .bind("0.0.0.0:8080")?
+        // .bind(("127.0.0.1", 8080))?
+        // docker port mapping
+        // .bind(("0.0.0.0", 8080))?
         .run().await
 }
