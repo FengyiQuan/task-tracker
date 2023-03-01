@@ -10,5 +10,8 @@ Content-Type: application/json
 
 
 ###
-GET http://localhost:8080/task/00402aa5-820c-4f83-b2b7-55dcf3e6defa_5511d4c6-8ad9-4e5a-94a0-dafa9f177bdb
+GET http://localhost:8080/task/00402aa5-820c-4f83-b2b7-55dcf3e6defa_9358532d-0d37-49b3-9ea7-c52131d3a9d6
+
+###
+GET http://127.0.0.1:64888/task/00402aa5-820c-4f83-b2b7-55dcf3e6defa_9358532d-0d37-49b3-9ea7-c52131d3a9d6
 
