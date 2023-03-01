@@ -68,5 +68,6 @@ To run the web app locally, follow these steps:
   - `minikube start`
   - `minikube stop`
   - `minikube service <service-name> --url` a shortcut for fetching the minikube IP and a service’s NodePort
+  - `minikube tunnel` runs as a process, creating a network route on the host to the service CIDR of the cluster using the cluster’s IP address as a gateway
   
   
