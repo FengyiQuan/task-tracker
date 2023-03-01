@@ -42,3 +42,18 @@ To run the web app locally, follow these steps:
 - Push image to DockerHub, or Cloud based Container Registery (ECR)
 - Project should deploy automatically to Kubernetes cluster
 - Deployment should be to some form of Kubernetes service (can be hosted like Google Cloud Run or Amazon EKS, etc)
+
+## Command
+- kubectl
+  - `kubectl config view` view ~/.kube/config
+  - `kubectl config current-context`
+  - `kubectl config use-context <context-name>`
+  - `kubectl get pods`
+  - `kubectl get ns` get all namespaces
+  - `kubectl get deployment -n <namespace>`
+  - `kubectl apply -f <file-path>`
+  - `kubectl delete service <service-name> -n <namespace>`
+  - `kubectl delete deployment <deployment-name> -n <namespace>`
+  - `kubectl describe deployment/service -n <namespace>`
+  
+  
