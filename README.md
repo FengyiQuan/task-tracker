@@ -55,5 +55,17 @@ To run the web app locally, follow these steps:
   - `kubectl delete service <service-name> -n <namespace>`
   - `kubectl delete deployment <deployment-name> -n <namespace>`
   - `kubectl describe deployment/service -n <namespace>`
+  - `kubectl expose deployment hi-minikube --type=LoadBalancer --port=8080` create service and expose it
+
+- docker
+  - `docker login -u <username>`
+  - `docker build . -t <tagname>` e.g. `docker build . -t fengyiquan/minikube`
+  - `docker tag <local-image>:<tagname> <new-repo>:<tagname>`
+  - `docker push <new-repo>:<tagname>` e.g. `docker push fengyiquan/minikube`
+
+- minikube
+  - `minikube start`
+  - `minikube stop`
+  - `minikube service <service-name> --url` a shortcut for fetching the minikube IP and a service’s NodePort
   
   
