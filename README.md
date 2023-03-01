@@ -48,6 +48,7 @@ To run the web app locally, follow these steps:
   - `kubectl config view` view ~/.kube/config
   - `kubectl config current-context`
   - `kubectl config use-context <context-name>`
+  - `kubectl create namespace <namespace-name>`
   - `kubectl get pods`
   - `kubectl get ns` get all namespaces
   - `kubectl get deployment -n <namespace>`
